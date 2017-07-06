@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>Tankevæggen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Et sted at dele sine tanker, give dem vinger og lade dem flyve.">
+    <meta name="keywords" content="tanker,bekymringer,kærlighed,filosofi,fællesskab">
+    <meta name="theme-color" content="#efedea">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+    <style>
+      .main {
+        font-family: 'Work Sans', sans-serif;
+        background: url('cover_vertical.png');
+        background-attachment: scroll;
+        background-size: 100%;
+      }
+      .logo {
+        opacity: 1
+      }
+      .logo, .logo:focus, .logo:hover {
+        -webkit-transition: opacity .15s ease-in;
+        transition: opacity .15s ease-in
+      }
+      .logo:focus, .logo:hover {
+        opacity: .5
+      }
+      .logo:active {
+        opacity: .8;
+        -webkit-transition: opacity .15s ease-out;
+        transition: opacity .15s ease-out
+      }
+      .logo {
+        width: 90%;
+        display: block;
+        opacity: 1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -moz-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+      .announcement {
+        background-color: #8cc2b2;
+        line-height: 1.4;
+        font-size: .875rem;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: .5rem;
+        text-align: center;
+        z-index: 999;
+        color: white;
+      }
+      @media screen and (min-width: 30em) {
+        .main {
+          background: url('cover_horizontal.png');
+          background-attachment: fixed;
+          background-size: cover;
+        }
+        .logo {
+          width: 50%;
+        }
+        .announcement {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="main">
+    <img alt="Tankevæggens logo" class="logo" src="logo.svg">
+    <section class="announcement">
+      Tankevæggen holder <span class="js-holiday"></span>ferie. Tak for alle de smukke tanker.
+    </section>
+    <script>
+      var element = document.querySelector('.js-holiday');
+
+      switch(new Date().getMonth()) {
+        case 10:
+        case 11:
+        case 0:
+          element.textContent = "jule";
+          break;
+        case 1:
+          element.textContent = "vinter";
+          break;
+        case 2:
+        case 3:
+          element.textContent = "påske";
+          break;
+        case 4:
+          element.textContent = "pinse";
+          break;
+        case 5:
+        case 6:
+        case 7:
+        case 8:
+          element.textContent = "sommer";
+          break;
+        case 9:
+          element.textContent = "efterårs";
+          break;
+      }
+    </script>
+  </body>
+</html>
